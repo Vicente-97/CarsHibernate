@@ -34,12 +34,12 @@ public class Brand {
 	
 	public void addCar(Car car) {
 		listaCoches.add(car);
-		car.setCarMaker(this);
+		
 	}
 	
 	public void removeCar(Car car) {
 		listaCoches.remove(car);
-		car.setCarMaker(null);
+		
 	}
 	
 	
