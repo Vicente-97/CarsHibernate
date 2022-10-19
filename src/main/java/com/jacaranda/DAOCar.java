@@ -29,7 +29,7 @@ public class DAOCar {
         while (resultSet.next()) {
             //Crea el objeto car con la información de la consulta por id. 
             //Obteniendo los datos por columnas
-            car = new Car(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3), resultSet.getString(4) , resultSet.getDouble(5), LocalDate.parse(resultSet.getString(6)), resultSet.getString(7) );
+            //car = new Car(resultSet.getInt(1), resultSet.getString(2), resultSet.get(3), resultSet.getString(4) , resultSet.getDouble(5), LocalDate.parse(resultSet.getString(6)), resultSet.getString(7) );
         }
             
         return car;
@@ -140,8 +140,9 @@ public class DAOCar {
     ResultSet resultSet = st.executeQuery("select * from CAR_DATA");
 
     while(resultSet.next()) {
-    Car car = new Car(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3), resultSet.getString(4) , resultSet.getDouble(5), LocalDate.parse(resultSet.getString(6)), resultSet.getString(7) );
-    resultado.add(car);
+   // Car car = new Car(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3), resultSet.getString(4) , resultSet.getDouble(5), LocalDate.parse(resultSet.getString(6)), resultSet.getString(7) );
+   //	Hay que arreglarlo con el Hibernate, ya que recuperamos en el resulset un String y deberiamos recuperar una Marca o Brand
+    //	resultado.add(car);
     
     }
     return  resultado;
