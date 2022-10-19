@@ -15,7 +15,7 @@ public class Car {
 	private int modelYear;
 	private String modelAuto;
 	@ManyToOne
-	private Brand carMaker;
+	private String carMaker;
 	private String availability;
 	private double price;
 	private LocalDate dateEntry;
@@ -25,7 +25,7 @@ public class Car {
 	public Car() {
 	}
 
-	public Car(int modelYear, String modelAuto, Brand carMaker, String availability, double price,
+	public Car(int modelYear, String modelAuto, String carMaker, String availability, double price,
 			LocalDate dateEntry, String id) {
 		super();
 		this.modelYear = modelYear;
@@ -55,11 +55,11 @@ public class Car {
 		this.modelAuto = modelAuto;
 	}
 
-	public Brand getCarMaker() {
+	public String getCarMaker() {
 		return carMaker;
 	}
 
-	public void setCarMaker(Brand carMaker) {
+	public void setCarMaker(String carMaker) {
 		this.carMaker = carMaker;
 	}
 

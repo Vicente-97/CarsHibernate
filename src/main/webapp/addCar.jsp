@@ -41,21 +41,21 @@
 		<h1>Añadir coche a la venta: </h1>
 		<fieldset style="width:fit-content">
 			<legend id="legends"><b>Rellene los siguientes datos: </b></legend>
-					Año del vehículo: <input type="number" name="model_year"><br>
+					Año del vehículo: <input type="number" name="model_year" required><br>
 					<br>
-					Marca o Fabricante: <input type="text" name="car_make"><br>
+					Marca o Fabricante: <input type="text" name="car_make" required><br>
 					<br>
-					Modelo: <input type="text" name="model_auto"><br>
+					Modelo: <input type="text" name="model_auto" required><br>
 					<br>
-					Disponibilidad: No<input type="radio" name="avaibility" value="false">
-					Sí <input type="radio" name="avaibility" value="true">
+					Disponibilidad: Si<input type="radio" name="avaibility" value="false">
+					No <input type="radio" name="avaibility" value="true">
 					<br>
 					<br>
-					Precio: <input type="number" step="any" name="price"><br>
+					Precio: <input type="number" step="any" name="price" required><br>
 					<br>
-					Fecha de entrada: <input type="date" name="entry_date"><br>
+					Fecha de entrada: <input type="date" name="entry_date" required><br>
 					<br>
-					Identificador del vehiculo: <input type="text" name="id"><br>
+					Identificador del vehiculo: <input type="text" name="id" required><br>
 					<br>
 					<a href="indexCar.jsp"><button name="AnnadirCoche">Añadir Coche</button></a>
 		
