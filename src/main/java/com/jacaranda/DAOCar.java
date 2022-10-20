@@ -140,9 +140,9 @@ public class DAOCar {
     ResultSet resultSet = st.executeQuery("select * from CAR_DATA");
 
     while(resultSet.next()) {
-   // Car car = new Car(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3), resultSet.getString(4) , resultSet.getDouble(5), LocalDate.parse(resultSet.getString(6)), resultSet.getString(7) );
+   Car car = new Car(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3), resultSet.getString(4) , resultSet.getDouble(5), LocalDate.parse(resultSet.getString(6)), resultSet.getString(7) );
    //	Hay que arreglarlo con el Hibernate, ya que recuperamos en el resulset un String y deberiamos recuperar una Marca o Brand
-    //	resultado.add(car);
+    resultado.add(car);
     
     }
     return  resultado;
