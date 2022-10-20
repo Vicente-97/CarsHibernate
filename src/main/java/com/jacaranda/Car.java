@@ -3,29 +3,41 @@ package com.jacaranda;
 import java.time.LocalDate;
 import java.util.Objects;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-	@Entity
-	@Table(name="CAR_DATA")
+	@Entity(name="CAR_DATA")
 public class Car {
 	
-		
+	@Column(name="model_year")
 	private int modelYear;
+	
+	@Column(name="model_auto")
 	private String modelAuto;
+	
 	@ManyToOne
-	private String carMaker;
+	@JoinColumn(name="car_make")
+	private Brand carMaker;
+	
+	@Column(name="availability")
 	private String availability;
+	
+	@Column(name="price")
 	private double price;
+	
+	@Column(name="entry_date")
 	private LocalDate dateEntry;
+	
 	@Id
 	private String id;
 
 	public Car() {
 	}
 
-	public Car(int modelYear, String modelAuto, String carMaker, String availability, double price,
+	public Car(int modelYear, String modelAuto, Brand carMaker, String availability, double price,
 			LocalDate dateEntry, String id) {
 		super();
 		this.modelYear = modelYear;
@@ -55,11 +67,11 @@ public class Car {
 		this.modelAuto = modelAuto;
 	}
 
-	public String getCarMaker() {
+	public Brand getCarMaker() {
 		return carMaker;
 	}
 
-	public void setCarMaker(String carMaker) {
+	public void setCarMaker(Brand carMaker) {
 		this.carMaker = carMaker;
 	}
 

@@ -131,7 +131,7 @@ public class DAOCar {
     return  resultado;
     }
     
-    
+    /*
     // Optiene una lista con los coches
     public List<Car> getCars () throws Exception {
     List<Car> resultado= new ArrayList<Car>();
@@ -146,7 +146,10 @@ public class DAOCar {
     
     }
     return  resultado;
-    }
+    }*/
+    
+    
+    
 }
 
 

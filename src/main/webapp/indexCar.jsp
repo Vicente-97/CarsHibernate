@@ -1,3 +1,4 @@
+<%@page import="com.jacaranda.CRUD"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="com.jacaranda.DAOCar" %>
@@ -34,14 +35,16 @@
 	<br>
 <% 
 		
-	DAOCar daoC = new DAOCar();
+	//DAOCar daoC = new DAOCar();
+	CRUD crud = new CRUD();
 	List<Car> carList = null;
 	try {
-		carList = daoC.getCars();
+		carList = crud.getCars();
 	
 	} catch (Exception e) {
 		String message = e.getMessage();
-		response.sendRedirect("error.jsp?msg=" + message);
+		out.print(message);
+	//	response.sendRedirect("error.jsp?msg=" + message);
 	}
 	
 %>

@@ -9,7 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-	@Entity
+	@Entity(name="Brand")
 public class Brand {
 	@Id
 	private String name;
