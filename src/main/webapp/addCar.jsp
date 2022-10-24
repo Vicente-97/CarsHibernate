@@ -18,7 +18,7 @@
 	String idCar = request.getParameter("value");
 	// busco el coche en la base de datos
 	DAOCar daoCar = new DAOCar();
-	Car car = daoCar.getCar(idCar);
+	//Car car = daoCar.getCar(idCar);
 	
 %>
 <!DOCTYPE html>

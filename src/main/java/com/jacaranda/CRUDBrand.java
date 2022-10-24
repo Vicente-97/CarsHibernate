@@ -1,10 +1,13 @@
 package com.jacaranda;
 
+import java.util.ArrayList;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.query.Query;
 
 
 
@@ -62,7 +65,14 @@ public class CRUDBrand {
 		return resultado;
 	}
 	
-	
+	public static ArrayList<Brand> getBrand(){
+		Session session = Conn.getSession();
+		
+		Query<Brand> query = session.createQuery("SELECT p FROM com.jacaranda.Brand p");
+		ArrayList<Brand> brand = (ArrayList<Brand>) query.getResultList();
+		
+		return brand;
+	}
 	
 }
 

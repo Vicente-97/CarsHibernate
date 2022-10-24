@@ -76,20 +76,18 @@ public class DAOCar {
 //        return result;
 //        }
 //    
-//    //Comprueba si el usuario es valido en nuestra base de datos.
-//    public boolean userIsvalid(String name, String pass) throws SQLException, ClassNotFoundException {
+// //Comprueba si el usuario es valido en nuestra base de datos.
+//    	public boolean userIsvalid(String name, String pass) throws SQLException, ClassNotFoundException {
 //        Connection connection = Conn.getConnection();
 //        boolean bandera=false;
 //
 //        Statement st = connection.createStatement();
 //        ResultSet resultSet = st.executeQuery("select * from USERS where name='"+name+"'and pass='"+pass+"';");
-//        if(resultSet.next()) {
-//           
-//           bandera=true;
-//            
-//        }
-//        return bandera;
-//        }
+//		if(resultSet.next()) {           
+//          bandera=true;
+//                    }
+//       return bandera;
+//       }
 //    
 //    
 //    public void deleteCar(String id) throws SQLException, ClassNotFoundException {

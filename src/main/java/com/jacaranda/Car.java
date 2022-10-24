@@ -9,30 +9,24 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-	@Entity(name="CAR_DATA")
+	@Entity
+	@Table(name="CAR_DATA")
 public class Car {
 	
-	@Column(name="model_year")
-	private int modelYear;
-	
-	@Column(name="model_auto")
-	private String modelAuto;
-	
-	@ManyToOne
-	@JoinColumn(name="car_make")
-	private Brand carMaker;
-	
-	@Column(name="availability")
-	private String availability;
-	
-	@Column(name="price")
-	private double price;
-	
-	@Column(name="entry_date")
-	private LocalDate dateEntry;
-	
+		
 	@Id
 	private String id;
+	@Column(name="model_year")	
+	private int modelYear;
+	@Column(name="model_auto")	
+	private String modelAuto;
+	@ManyToOne
+	@JoinColumn (name="car_make")
+	private Brand carMaker;
+	private String availability;
+	private double price;
+	@Column(name="entry_date")	
+	private LocalDate dateEntry;
 
 	public Car() {
 	}

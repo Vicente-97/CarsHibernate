@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -13,45 +14,74 @@ import javax.persistence.OneToMany;
 public class Brand {
 	@Id
 	private String name;
+	@Column(name="country")
 	private String country;
+	@Column(name="address")
 	private String address;
 	@OneToMany(mappedBy="carMaker", cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<Car> listaCoches;
+	private List<Car> listCar;
 	
 	
 	public Brand() {
 		
 	}
-	
-	public Brand(String name, String country, String address) {
+
+
+	public Brand(String name, String country, String address, List<Car> listCar) {
 		super();
 		this.name = name;
 		this.country = country;
 		this.address = address;
-		listaCoches= new ArrayList<>();
+		this.listCar = null;
 	}
 
-	
-	public void addCar(Car car) {
-		listaCoches.add(car);
-		
+
+	public String getName() {
+		return name;
 	}
-	
-	public void removeCar(Car car) {
-		listaCoches.remove(car);
-		
+
+
+	public void setName(String name) {
+		this.name = name;
 	}
-	
-	
-	@Override
-	public String toString() {
-		return "Brand [name=" + name + ", country=" + country + ", address=" + address + "]";
+
+
+	public String getCountry() {
+		return country;
 	}
+
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+
+	public String getAddress() {
+		return address;
+	}
+
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+
+	public List<Car> getListCar() {
+		List<Car> cc= listCar;
+		return cc;
+	}
+
+
+	public void setListCar(List<Car> listCar) {
+		this.listCar = listCar;
+	}
+
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(address, country, name);
+		return Objects.hash(address, country, listCar, name);
 	}
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -63,32 +93,16 @@ public class Brand {
 			return false;
 		Brand other = (Brand) obj;
 		return Objects.equals(address, other.address) && Objects.equals(country, other.country)
-				&& Objects.equals(name, other.name);
+				&& Objects.equals(listCar, other.listCar) && Objects.equals(name, other.name);
 	}
 
-	public String getName() {
-		return name;
-	}
 
-	public void setName(String name) {
-		this.name = name;
+	@Override
+	public String toString() {
+		return "Brand [name=" + name + ", country=" + country + ", address=" + address + ", listCar=" + listCar + "]";
 	}
-
-	public String getCountry() {
-		return country;
-	}
-
-	public void setCountry(String country) {
-		this.country = country;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
+	
 	
 	
 }
+
