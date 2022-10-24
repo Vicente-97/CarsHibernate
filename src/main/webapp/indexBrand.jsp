@@ -1,6 +1,7 @@
+<%@page import="com.jacaranda.CRUDBrand"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="com.jacaranda.CRUD" %>
+<%@ page import="com.jacaranda.CRUDBrand" %>
 <%@page import="java.util.Iterator"%>
 <%@ page import="com.jacaranda.Car"%>
 <%@ page import="com.jacaranda.Brand"%>
@@ -36,10 +37,10 @@
 	<br>
 <% 
 		
-	CRUD crudB = new CRUD();
+	CRUDBrand crudB = new CRUDBrand();
 	List<Brand> brandList = null;
 	try {
-		//brandList = crudB.getBrands(); //falta getBrands de CRUD
+		brandList = crudB.getBrand(); //falta getBrands de CRUD
 	
 	} catch (Exception e) {
 		String message = e.getMessage();
@@ -55,7 +56,6 @@
 				<th>Marca</th>
 				<th>Pais</th>
 				<th>Sucursal</th>
-				<th>Cantidad</th>
 				<th>Delete</th>
 				<th>Update</th>
 				<th>Ver coches</th>
