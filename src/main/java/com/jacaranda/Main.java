@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 public class Main {
 
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
+    	
         
 //        LocalDate entry_date=LocalDate.of(2018, 9, 21);
 //        DAOCar car = new DAOCar();

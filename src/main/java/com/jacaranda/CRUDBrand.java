@@ -65,7 +65,7 @@ public class CRUDBrand {
 		return resultado;
 	}
 	
-	public static ArrayList<Brand> getBrand(){
+	public static ArrayList<Brand> getBrands(){
 		Session session = Conn.getSession();
 		
 		Query<Brand> query = session.createQuery("SELECT p FROM com.jacaranda.Brand p");
