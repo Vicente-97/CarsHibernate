@@ -1,10 +1,14 @@
+<
 <%@page import="com.jacaranda.CRUDBrand"%>
+<%@page import="com.jacaranda.Brand"%>
+<%@page import="com.jacaranda.CRUDCar"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="com.jacaranda.DAOCar" %>
 <%@page import="java.util.Iterator"%>
 <%@ page import="com.jacaranda.Car" %>
 <%@ page import="java.util.List"%>
+
 <%
 	String isSession = (String) session.getAttribute("login");
 	String userSession = (String) session.getAttribute("usuario");
@@ -34,17 +38,22 @@
 	</div>
 	<br>
 <% 
-		
-	//DAOCar daoC = new DAOCar();
-	CRUD crud = new CRUD();
-	List<Car> carList = null;
+	String brandName=request.getParameter("value");	
+	
+	
+	Brand brand = CRUDBrand.getBrand(brandName);
+
+	
+	
+
+		List<Car> carList = brand.getListCar();
 	try {
-		carList = crud.getCars();
+		
 	
 	} catch (Exception e) {
 		String message = e.getMessage();
 		out.print(message);
-	//	response.sendRedirect("error.jsp?msg=" + message);
+		//response.sendRedirect("error.jsp?msg=" + message);
 	}
 	
 %>
