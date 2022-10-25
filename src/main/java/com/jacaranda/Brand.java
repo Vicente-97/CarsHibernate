@@ -25,7 +25,14 @@ public class Brand {
 	public Brand() {
 		
 	}
-
+	
+	public Brand(String name, String country, String address) {
+		super();
+		this.name = name;
+		this.country = country;
+		this.address = address;
+		this.listCar = null;
+	}
 
 	public Brand(String name, String country, String address, List<Car> listCar) {
 		super();
@@ -94,6 +101,10 @@ public class Brand {
 		Brand other = (Brand) obj;
 		return Objects.equals(address, other.address) && Objects.equals(country, other.country)
 				&& Objects.equals(listCar, other.listCar) && Objects.equals(name, other.name);
+	}
+	
+	public String getShortInfo() {
+	    return name + " " + country + " " + address ;
 	}
 
 

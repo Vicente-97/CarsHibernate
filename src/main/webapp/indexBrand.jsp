@@ -32,7 +32,7 @@
 	</div>
 	
 	<div id="botonadd" align="right">
-		<a href="addBrand.jsp" ><button name="addBrand" id="addButton" value="addBrand">Añadir Marca</button></a> 
+		<a href="AddBrand.jsp" ><button name="addBrand" id="addButton" value="addBrand">Añadir Marca</button></a> 
 	</div>
 	<br>
 <% 
@@ -40,7 +40,7 @@
 	CRUDBrand crudB = new CRUDBrand();
 	List<Brand> brandList = null;
 	try {
-		brandList = crudB.getBrand(); //falta getBrands de CRUD
+		brandList = crudB.getBrands(); //falta getBrands de CRUD
 	
 	} catch (Exception e) {
 		String message = e.getMessage();
@@ -78,8 +78,8 @@
 				<td><%=brand.getAddress()%></td>
 				<!-- <td>//brand.getlistCar().length%></td> Falta getLisCar -->
 					
-				<td><a href="deleteCar.jsp?value=<%=brand.getName()%>"><img src="images/delete.png" width="30px"></a></td>
-				<td><a href="UpdateCar.jsp?value=<%=brand.getName()%>"><img src="images/update.png" width="30px"></a></td>
+				<td><a href="deleteBrand.jsp?value=<%=brand.getName()%>"><img src="images/delete.png" width="30px"></a></td>
+				<td><a href="updateBrand.jsp?value=<%=brand.getName()%>"><img src="images/update.png" width="30px"></a></td>
 			</tr>
 			
 		<%}%>

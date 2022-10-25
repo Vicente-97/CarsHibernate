@@ -18,7 +18,7 @@
          	// HttpSession userSession = request.getSession();
          	session.setAttribute("login", "True");
          	session.setAttribute("usuario", usuario);
-    		response.sendRedirect("indexCar.jsp");
+    		response.sendRedirect("indexBrand.jsp");
             		
        	} else { 
        		response.sendRedirect("login.jsp?msg_error=true");
