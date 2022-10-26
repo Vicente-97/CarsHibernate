@@ -80,6 +80,7 @@
 					
 				<td><a href="deleteBrand.jsp?value=<%=brand.getName()%>"><img src="images/delete.png" width="30px"></a></td>
 				<td><a href="updateBrand.jsp?value=<%=brand.getName()%>"><img src="images/update.png" width="30px"></a></td>
+				<td><a href="indexCar.jsp?value=<%=brand.getName()%>"><img src="images/update.png" width="30px"></a></td>
 			</tr>
 			
 		<%}%>
@@ -87,4 +88,3 @@
 		</table>
 	</div>
 </body>
-</html>

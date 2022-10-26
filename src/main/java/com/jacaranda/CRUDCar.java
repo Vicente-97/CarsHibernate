@@ -37,7 +37,7 @@ public class CRUDCar {
 			
 			session.getTransaction().begin();
 			session.delete(car);
-			session.getTransaction();
+			session.getTransaction().commit();;
 			resultado=true;
 			
 		} catch (Exception e) {

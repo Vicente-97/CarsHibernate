@@ -55,7 +55,7 @@ public class CRUDBrand {
 			
 			session.getTransaction().begin();
 			session.delete(brand);
-			session.getTransaction();
+			session.getTransaction().commit();;
 			resultado=true;
 			
 		} catch (Exception e) {

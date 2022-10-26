@@ -1,24 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@page import="java.sql.Date"%>
+    <%@page import="com.jacaranda.CRUDCar"%>
 <%@page import="com.jacaranda.DAOCar"%>
 <%@page import="com.jacaranda.Car"%>
 <%@page import="java.time.format.DateTimeFormatter"%>
 <%@page import="java.time.LocalDate"%>
 <%
-	String isSession = (String) session.getAttribute("login");
+	/* String isSession = (String) session.getAttribute("login");
 	String userSession = (String) session.getAttribute("usuario");
 	
 	if(isSession == null && userSession == null){
 		response.sendRedirect("error.jsp?msg=No tienes permisos, haz login.");
-	}
+	} */
 	
 	// Obtengo el id desde el parametro
-	String idCar = request.getParameter("value");
-	// busco el coche en la base de datos
-	DAOCar daoCar = new DAOCar();
-	Car car = daoCar.getCar(idCar);
-	
+		String idCar = request.getParameter("value");
+		// busco el coche en la base de datos
+		Car car =CRUDCar.getCar(idCar);
 %>
 
 <!DOCTYPE html>
@@ -32,7 +31,7 @@
       
 	<div id="header">
     	<a href="indexCar.jsp"> <img src="images/icono2.png" width="110px" height="100px" id="logo"></a>
-        <span id="welcome"><h4>Sesion: <%=userSession%></h4></span>
+       <%--  <span id="welcome"><h4>Sesion: <%=userSession%></h4></span> --%>
         <hr>
     </div>
     <div id="contenido">

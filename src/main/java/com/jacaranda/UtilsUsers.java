@@ -30,8 +30,8 @@ public class UtilsUsers {
 	public static boolean userIsValid(String name, String pass) {
 		Session session = Conn.getSession();
 		boolean valid = false;
-		Query<User> query = session.createQuery("SELECT p FROM com.jacaranda.User p WHERE name='" + name + "'and pass='"+pass+"';");
-		if(query.getParameterValue(name).equals(name)) {
+		Query<User> query = session.createQuery("SELECT p FROM com.jacaranda.User p WHERE name='" + name + "'and pass='"+pass+"'",User.class);
+		if(!query.getResultList().isEmpty()) {
 			valid = true;
 		}
 		return valid;

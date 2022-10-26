@@ -10,12 +10,12 @@
 <%@ page import="java.util.List"%>
 
 <%
-	String isSession = (String) session.getAttribute("login");
+/* 	String isSession = (String) session.getAttribute("login");
 	String userSession = (String) session.getAttribute("usuario");
 	
 	if(isSession == null && userSession == null){
 		response.sendRedirect("error.jsp?msg=No tienes permisos, haz login.");
-	}
+	} */
 %>
 <!DOCTYPE html>
 <html>
@@ -28,7 +28,7 @@
 	<div id="header">
 		 <img src="images/icono2.png" width="110px" height="100px" id="logo">
 		 
-		 <span id="welcome"><h4>Sesion: <%=userSession%></h4></span>
+		 <%-- <span id="welcome"><h4>Sesion: <%=userSession%></h4></span> --%>
 		 <hr>
 
 	</div>
@@ -84,7 +84,7 @@
 			<tr>
 				<td><%=car.getModelYear()%></td>
 				<td><%=car.getModelAuto()%></td>
-				<td><%=car.getCarMaker()%></td>
+				<td><%=car.getCarMaker().getName()%></td>
 				<td><%=car.isAvailability()%></td>
 				<td><%=car.getPrice()%></td>
 				<td><%=car.getDateEntry()%></td>
@@ -92,6 +92,7 @@
 		
 				<td><a href="deleteCar.jsp?value=<%=car.getId()%>"><img src="images/delete.png" width="30px"></a></td>
 				<td><a href="UpdateCar.jsp?value=<%=car.getId()%>"><img src="images/update.png" width="30px"></a></td>
+				<td><a href="addCar.jsp?nombreMarca=<%=car.getCarMaker().getName()%>"><img src="images/update.png" width="30px"></a></td>
 			</tr>
 		<%
 		}

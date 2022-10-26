@@ -1,12 +1,17 @@
+<%@page import="com.jacaranda.Car"%>
+<%@page import="com.jacaranda.CRUDCar"%>
 <%@page import="java.time.LocalDate"%>
 <%@page import="java.sql.Date"%>
 <%@page import="com.jacaranda.DAOCar"%>
 
+
 <%
-//jsp para eliminar un coche, usa el método eliminar de la clase DAO.
-	DAOCar car = new DAOCar();
-	String id = request.getParameter("idEliminar");
-	car.deleteCar(id);
-	response.sendRedirect("indexCar.jsp");
-%>
-	
+
+String idCar = request.getParameter("idEliminar");
+
+Car c= CRUDCar.getCar(idCar);
+String brand = c.getCarMaker().getName();
+
+CRUDCar.carDelete(c);
+//cr.pruebaDelete(b);value=<%=brand.getName()
+response.sendRedirect("indexBrand.jsp?value="+brand);%>
