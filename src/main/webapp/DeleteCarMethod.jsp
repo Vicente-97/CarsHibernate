@@ -7,11 +7,11 @@
 
 <%
 
-String idCar = request.getParameter("idEliminar");
+String idCar = String.valueOf(request.getParameter("idEliminar"));
 
 Car c= CRUDCar.getCar(idCar);
 String brand = c.getCarMaker().getName();
 
 CRUDCar.carDelete(c);
 //cr.pruebaDelete(b);value=<%=brand.getName()
-response.sendRedirect("indexBrand.jsp?value="+brand);%>
+response.sendRedirect("indexCar.jsp?value="+brand);%>

@@ -119,7 +119,7 @@ public class Car {
 	}
 	
 	public String getShortInfo() {
-	    return carMaker + " " + modelAuto + " " + modelYear + " . Con ID: " + id ;
+	    return carMaker.getName() + " " + modelAuto + " " + modelYear + " . Con ID: " + id ;
 	}
 
 	@Override

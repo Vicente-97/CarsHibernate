@@ -39,7 +39,7 @@
 			<fieldset style="width:fit-content">
 				<legend id="legends"><b>Confirmar: </b></legend>
 				¿Eliminar vehiculo <%=car.getShortInfo() %> ? <br><br>
-				<a href="DeleteCarMethod.jsp?idEliminar=<%=car.getId()%>"><button name="EliminarCoche">Eliminar</button></a>
+				<a href="DeleteCarMethod.jsp?idEliminar=<%=car.getId()%>&idMarca<%= car.getCarMaker().getName()%>"><button name="EliminarCoche">Eliminar</button></a>
 				<a href="indexCar.jsp"><button name="Volver">Volver</button></a>
 		
 			</fieldset>

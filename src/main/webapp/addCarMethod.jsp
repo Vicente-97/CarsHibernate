@@ -34,7 +34,7 @@
 		CRUDCar.saveCar(car1);
 		
 	%>
-		<jsp:forward page="indexCar.jsp"></jsp:forward>
+		<% response.sendRedirect("indexCar.jsp?value="+car1.getCarMaker().getName());%>
 
 </body>
 </html>

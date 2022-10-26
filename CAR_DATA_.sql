@@ -18,7 +18,7 @@ create table CAR_DATA (
 	
 	
 CONSTRAINT pk_id PRIMARY KEY (id),
-CONSTRAINT fk_car_make FOREIGN KEY (car_make) REFERENCES Brand (name)
+CONSTRAINT fk_car_make FOREIGN KEY (car_make) REFERENCES Brand (name) ON DELETE CASCADE
 );
 
 create table USERS (

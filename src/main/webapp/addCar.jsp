@@ -23,8 +23,8 @@
 	//CRUDCar.getCar(idCar);
 	//Car car = daoCar.getCar(idCar);
 	
-	String idBrand = request.getParameter("nombreMarca");
-	Brand brand= CRUDBrand.getBrand(idBrand);
+	String idBrand = request.getParameter("nombre");
+	Brand b = CRUDBrand.getBrand(idBrand);
 %>
 <!DOCTYPE html>
 <html>
@@ -48,7 +48,7 @@
 			<legend id="legends"><b>Rellene los siguientes datos: </b></legend>
 					Año del vehículo: <input type="number" name="model_year" required><br>
 					<br>
-					Marca o Fabricante: <input type="text" name="car_make" required><br>
+					Marca o Fabricante: <input type="text" name="car_make" value="<%=b.getName()%>" required><br>
 					<br>
 					Modelo: <input type="text" name="model_auto" required><br>
 					<br>

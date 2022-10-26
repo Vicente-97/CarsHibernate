@@ -39,14 +39,10 @@
 	<br>
 <% 
 	String brandName=request.getParameter("value");	
+	String brandName2 = request.getParameter("car_make");
 	
-	
-	Brand brand = CRUDBrand.getBrand(brandName);
-
-	
-	
-
-		List<Car> carList = brand.getListCar();
+	Brand brand = new Brand();
+	List<Car> carList = brand.getListCar();
 	try {
 		
 	
@@ -55,6 +51,7 @@
 		out.print(message);
 		//response.sendRedirect("error.jsp?msg=" + message);
 	}
+	
 	
 %>
 	<div>
@@ -70,16 +67,27 @@
 				<th>ID</th>
 				<th>Delete</th>
 				<th>Update</th>
+				<th>Add Car: </th>
 			</tr>
+			
 		
 		<%
-		
+		if (brandName==null){
+			brandName = brandName2;
+			brand= CRUDBrand.getBrand(brandName2);
+			carList = brand.getListCar();
+			
+		}else{
+			CRUDBrand crud = new CRUDBrand();
+			brand = crud.getBrand(brandName);
+			carList = brand.getListCar();
+		}
 		Iterator<Car> iterator = carList.iterator();  
 		
 		while(iterator.hasNext()) { //Itera cada linea de nuestra base datos y nos la muestra en la tabla correspondiente.
 			
 			Car car = iterator.next();
-			String id= car.getId();
+			
 		%>
 			<tr>
 				<td><%=car.getModelYear()%></td>
@@ -92,7 +100,7 @@
 		
 				<td><a href="deleteCar.jsp?value=<%=car.getId()%>"><img src="images/delete.png" width="30px"></a></td>
 				<td><a href="UpdateCar.jsp?value=<%=car.getId()%>"><img src="images/update.png" width="30px"></a></td>
-				<td><a href="addCar.jsp?nombreMarca=<%=car.getCarMaker().getName()%>"><img src="images/update.png" width="30px"></a></td>
+				<td><a href="addCar.jsp?nombre=<%=car.getCarMaker().getName()%>"><img src="images/lista2.png" width="30px"></a></td>
 			</tr>
 		<%
 		}

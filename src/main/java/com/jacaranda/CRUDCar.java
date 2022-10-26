@@ -7,9 +7,10 @@ import org.hibernate.query.Query;
 
 public class CRUDCar {
 
-	public static Car getCar(String id ) {
+	public static Car getCar(String id) {
 		Session session = Conn.getSession();
 		Car car = (Car) session.get(Car.class,id);
+		
 		return car;
 	}
 	
@@ -20,6 +21,7 @@ public class CRUDCar {
 		try {
 			session.getTransaction().begin();
 			session.saveOrUpdate(car);
+			car.getCarMaker().getListCar().add(car);
 			session.getTransaction().commit();
 			resultado=true;			
 			
@@ -29,6 +31,9 @@ public class CRUDCar {
 		return resultado;
 	}
 	
+
+	
+	
 	public  static boolean  carDelete(Car car) {
 		boolean resultado= false;
 		Session session =Conn.getSession();
@@ -37,6 +42,7 @@ public class CRUDCar {
 			
 			session.getTransaction().begin();
 			session.delete(car);
+			car.getCarMaker().getListCar().remove(car);
 			session.getTransaction().commit();;
 			resultado=true;
 			
