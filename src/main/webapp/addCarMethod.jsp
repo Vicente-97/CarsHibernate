@@ -33,7 +33,7 @@
 		CRUDCar.saveCar(car1);
 		
 	%>
-		<% response.sendRedirect("indexCar.jsp?value="+car1.getCarMaker().getName());%>
+		<% response.sendRedirect("indexCar.jsp?marca="+car1.getCarMaker().getName());%>
 
 </body>
 </html>

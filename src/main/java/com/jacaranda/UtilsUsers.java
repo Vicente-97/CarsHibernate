@@ -28,11 +28,16 @@ public class UtilsUsers {
 	
 	  //Comprueba si el usuario es valido en nuestra base de datos.
 	public static boolean userIsValid(String name, String pass) {
-		Session session = Conn.getSession();
-		boolean valid = false;
-		Query<User> query = session.createQuery("SELECT p FROM com.jacaranda.User p WHERE name='" + name + "'and pass='"+pass+"'",User.class);
-		if(!query.getResultList().isEmpty()) {
-			valid = true;
+	    boolean valid = false;
+		try {
+		    Session session = Conn.getSession();
+		    Query<User> query = session.createQuery("SELECT p FROM com.jacaranda.User p WHERE name='" + name + "'and pass='"+pass+"'",User.class);
+		    if(!query.getResultList().isEmpty()) {
+		        valid = true;
+		    
+		    }
+		}catch(Exception e) {
+		    System.out.println(e.getMessage());
 		}
 		return valid;
 	}
