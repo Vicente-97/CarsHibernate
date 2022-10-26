@@ -9,7 +9,7 @@
 </head>
 <body background="images/fondo.svg">
 	<%// Obtengo el id desde el parametro
-	String nameBrand = request.getParameter("value");
+	String nameBrand = request.getParameter("marca");
 	// busco el coche en la base de datos
 	CRUDBrand cr = new CRUDBrand();
 	cr.getBrand(nameBrand); %>

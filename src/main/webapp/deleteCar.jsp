@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@page import="java.sql.Date"%>
-    <%@page import="com.jacaranda.CRUDCar"%>
-<%@page import="com.jacaranda.DAOCar"%>
+<%@page import="java.sql.Date"%>
+<%@page import="com.jacaranda.CRUDCar"%>
 <%@page import="com.jacaranda.Car"%>
 <%@page import="java.time.format.DateTimeFormatter"%>
 <%@page import="java.time.LocalDate"%>

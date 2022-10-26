@@ -1,21 +1,20 @@
-<
+
 <%@page import="com.jacaranda.CRUDBrand"%>
 <%@page import="com.jacaranda.Brand"%>
 <%@page import="com.jacaranda.CRUDCar"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="com.jacaranda.DAOCar" %>
 <%@page import="java.util.Iterator"%>
 <%@ page import="com.jacaranda.Car" %>
 <%@ page import="java.util.List"%>
 
 <%
-/* 	String isSession = (String) session.getAttribute("login");
+ 	String isSession = (String) session.getAttribute("login");
 	String userSession = (String) session.getAttribute("usuario");
 	
 	if(isSession == null && userSession == null){
 		response.sendRedirect("error.jsp?msg=No tienes permisos, haz login.");
-	} */
+	} 
 %>
 <!DOCTYPE html>
 <html>
@@ -28,7 +27,7 @@
 	<div id="header">
 		 <img src="images/icono2.png" width="110px" height="100px" id="logo">
 		 
-		 <%-- <span id="welcome"><h4>Sesion: <%=userSession%></h4></span> --%>
+		 <span id="welcome"><h4>Sesion: <%=userSession%></h4></span>
 		 <hr>
 
 	</div>
@@ -38,7 +37,7 @@
 	</div>
 	<br>
 <% 
-	String brandName=request.getParameter("value");	
+	String brandName=request.getParameter("marca");	
 	String brandName2 = request.getParameter("car_make");
 	
 	Brand brand = new Brand();

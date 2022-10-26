@@ -2,7 +2,6 @@
 <%@page import="com.jacaranda.Brand"%>
 <%@page import="com.jacaranda.CRUDCar"%>
 <%@page import="com.jacaranda.CRUDBrand"%>
-<%@page import="com.jacaranda.DAOCar"%>
 <%@page import="java.time.format.DateTimeFormatter"%>
 <%@page import="java.time.LocalDate"%>
 <%@page import="com.jacaranda.Car"%>
@@ -62,7 +61,7 @@
 					<br>
 					Identificador del vehiculo: <input type="text" name="id" required><br>
 					<br>
-					<a href="indexCar.jsp"><button name="AnnadirCoche">Añadir Coche</button></a>
+					<button name="AnnadirCoche">Añadir Coche</button>
 		
 		</fieldset>
 					</form>

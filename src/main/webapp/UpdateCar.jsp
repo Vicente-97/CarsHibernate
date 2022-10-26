@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ page import="com.jacaranda.DAOCar" %>
 <%@page import="java.util.Iterator"%>
 <%@ page import="com.jacaranda.Car" %>
 <%@ page import="java.util.List"%>
@@ -15,8 +14,8 @@
 	// Obtengo el id desde el parametro
 	String idCar = request.getParameter("value");
 	// busco el coche en la base de datos
-	DAOCar daoCar = new DAOCar();
-	Car car = daoCar.getCar(idCar);
+	//DAOCar daoCar = new DAOCar();
+	//Car car = daoCar.getCar(idCar);
 	
 %>
 
