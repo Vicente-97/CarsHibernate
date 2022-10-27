@@ -15,10 +15,10 @@
 <body>
 	<%
 	
-		CRUDCar cr = new CRUDCar();
+		
 		int modelYear=Integer.valueOf(request.getParameter("model_year"));
 		String modelAuto=String.valueOf(request.getParameter("model_auto"));
-		String carMake= String.valueOf(request.getParameter("car_make"));
+		String carMake= String.valueOf(request.getParameter("marca"));
 		
 		Brand brand = CRUDBrand.getBrand(carMake);
 		
@@ -33,7 +33,7 @@
 		CRUDCar.saveCar(car1);
 		
 	%>
-		<% response.sendRedirect("indexCar.jsp?marca="+car1.getCarMaker().getName());%>
+		<% response.sendRedirect("indexCar.jsp?marca=" + car1.getCarMaker().getName());%>
 
 </body>
 </html>

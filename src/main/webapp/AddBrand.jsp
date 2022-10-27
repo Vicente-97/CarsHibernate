@@ -13,7 +13,7 @@
 <body background="images/fondo.svg">
 
 	<div id="header">
-    	<a href="indexCar.jsp"> <img src="images/icono2.png" width="110px" height="100px" id="logo"></a>
+    	<a href="indexBrand.jsp"> <img src="images/icono2.png" width="110px" height="100px" id="logo"></a>
         <span id="welcome"><h4>Sesion: </h4></span>
         <hr>
     </div>

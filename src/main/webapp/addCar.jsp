@@ -9,20 +9,20 @@
     pageEncoding="UTF-8"%>
     
 <%
-/* 	String isSession = (String) session.getAttribute("login");
+ 	 String isSession = (String) session.getAttribute("login");
 	String userSession = (String) session.getAttribute("usuario");
-	
+	/*
 	if(isSession == null && userSession == null){
 		response.sendRedirect("error.jsp?msg=No tienes permisos, haz login.");
-	}
-	 */
+	} */
+	 
 	// Obtengo el id desde el parametro
 	//String idCar = request.getParameter("value");
 	// busco el coche en la base de datos
 	//CRUDCar.getCar(idCar);
 	//Car car = daoCar.getCar(idCar);
 	
-	String idBrand = request.getParameter("nombre");
+	String idBrand = request.getParameter("marca2");
 	Brand b = CRUDBrand.getBrand(idBrand);
 %>
 <!DOCTYPE html>
@@ -36,18 +36,16 @@
 <body background="images/fondo.svg">
 
 	<div id="header">
-    	<a href="indexCar.jsp"> <img src="images/icono2.png" width="110px" height="100px" id="logo"></a>
-        <%-- <span id="welcome"><h4>Sesion: <%=userSession%></h4></span> --%>
+    	<a href="indexCar.jsp?marca=<%=idBrand%>"><img src="images/icono2.png" width="110px" height="100px" id="logo"></a>
+        <span id="welcome"> <h4>Sesion: <%=userSession%></h4></span>
         <hr>
     </div>
     <div id="contenido">
 				<form action="addCarMethod.jsp" method="GET" id="annadirCarForm">
-		<h1>Añadir coche a la venta: </h1>
+		<h1>Añadir coche <%=idBrand%> a la venta: </h1>
 		<fieldset style="width:fit-content">
 			<legend id="legends"><b>Rellene los siguientes datos: </b></legend>
 					Año del vehículo: <input type="number" name="model_year" required><br>
-					<br>
-					Marca o Fabricante: <input type="text" name="car_make" value="<%=b.getName()%>" required><br>
 					<br>
 					Modelo: <input type="text" name="model_auto" required><br>
 					<br>
@@ -61,7 +59,7 @@
 					<br>
 					Identificador del vehiculo: <input type="text" name="id" required><br>
 					<br>
-					<button name="AnnadirCoche">Añadir Coche</button>
+					<button  name="marca" value=<%=idBrand%>>Añadir Coche</button>
 		
 		</fieldset>
 					</form>

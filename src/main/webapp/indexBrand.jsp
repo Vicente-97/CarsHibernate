@@ -10,13 +10,13 @@
 
 
 <%
-	String isSession = (String) session.getAttribute("login");
+ String isSession = (String) session.getAttribute("login");
 	String userSession = (String) session.getAttribute("usuario");
-	
+	/* 
 	if(isSession == null && userSession == null){
 		response.sendRedirect("error.jsp?msg=No tienes permisos, haz login.");
-	} 
-%>
+	}  */
+%> 
 <!DOCTYPE html>
 <html>
 <head>
