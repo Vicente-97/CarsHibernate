@@ -32,7 +32,21 @@ public class CRUDCar {
 	}
 	
 
-	
+	public static boolean updateCar( Car car) {
+		boolean resultado=false;
+		Session session = Conn.getSession();
+		
+		try {
+			session.getTransaction().begin();
+			session.update(car);
+			session.getTransaction().commit();
+			resultado=true;			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return resultado;
+	}
 	
 	public  static boolean  carDelete(Car car) {
 		boolean resultado= false;
