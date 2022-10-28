@@ -37,7 +37,7 @@
 		String brandName2 = request.getParameter("car_make"); %>
 	
 	<div id="botonadd" align="right">
-		<a href="addCar.jsp?marca2=<%=brandName%>" ><button name="addCar" id="addButton" value="addCar">Add car</button></a> 
+		<a href="addCar.jsp?marca=<%=brandName%>" ><button name="addCar" id="addButton" value="addCar">Add car</button></a> 
 	</div>
 	<br>
 	<% 

@@ -18,15 +18,22 @@
 </head>
 <body>
 
-	<%CRUDBrand cr = new CRUDBrand();
+	<%
 	String name = String.valueOf(request.getParameter("nameBrand"));
 	String country = String.valueOf(request.getParameter("countryBrand"));
 	String address = String.valueOf(request.getParameter("addressBrand"));
-	Brand b = new Brand(name,country,address);
-	cr.saveBrand(b);
+	
+	if(CRUDBrand.getBrand(name)==null){
+		Brand b = new Brand(name,country,address);
+		CRUDBrand.saveBrand(b);
+		response.sendRedirect("indexBrand.jsp");
+		
+	}else{
+		response.sendRedirect("AddBrand.jsp?msg_error=true");
+	}
 	
 	%>
-	<jsp:forward page="indexBrand.jsp"></jsp:forward>
+<%-- 	<jsp:forward page="indexBrand.jsp"></jsp:forward> --%>
 	
 
 </body>
