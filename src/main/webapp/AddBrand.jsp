@@ -29,6 +29,15 @@
     <div id="contenido">
 				<form action="addBrandMethod.jsp" method="GET" id="annadirBrandForm">
 		<h1>Añadir Marca: </h1>
+		<%
+				//Se comprueba si existe la variable error que vendría true del AddBrandMethod si la marca ya existe
+				String messageLog = request.getParameter("msg_error");
+				if(messageLog!=null){
+				%>
+					<div id="msg_error">
+						<span>La marca ya existe</span>
+					</div>
+				<%}%>
 		<fieldset style="width:fit-content">
 			<legend id="legends"><b>Rellene los siguientes datos: </b></legend>
 					Nombre de la Marca: <input type="text" name="nameBrand" required><br>

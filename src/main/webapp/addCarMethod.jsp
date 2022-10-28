@@ -35,13 +35,19 @@
 		LocalDate entry_date = LocalDate.parse(String.valueOf((request.getParameter("entry_date"))));
 		String id = String.valueOf(request.getParameter("id"));
 		
+		if(CRUDCar.getCar(id)== null ){
+			Car car1 = new Car(modelYear, modelAuto, brand, avaibility, price, entry_date, id);
 		
-		Car car1 = new Car(modelYear, modelAuto, brand, avaibility, price, entry_date, id);
+			CRUDCar.saveCar(car1);
+			response.sendRedirect("indexCar.jsp?marca=" + car1.getCarMaker().getName());
+		}else{
+			response.sendRedirect("addCar.jsp?marca=" + carMake+"&msg_error=true");
+		}
 		
-		CRUDCar.saveCar(car1);
+		
 		
 	%>
-		<% response.sendRedirect("indexCar.jsp?marca=" + car1.getCarMaker().getName());%>
+		<% %>
 
 </body>
 </html>

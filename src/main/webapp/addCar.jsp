@@ -18,7 +18,7 @@
 	 
 	
 	
-	String idBrand = request.getParameter("marca2");
+	String idBrand = request.getParameter("marca");
 	Brand b = CRUDBrand.getBrand(idBrand);
 %>
 <!DOCTYPE html>
@@ -40,6 +40,15 @@
     <div id="contenido">
 				<form action="addCarMethod.jsp" method="GET" id="annadirCarForm">
 		<h1>Añadir coche <%=idBrand%> a la venta: </h1>
+		<%
+				//Se comprueba si existe la variable error que vendría true del addCardMethod si el coche ya existe
+				String messageLog = request.getParameter("msg_error");
+				if(messageLog!=null){
+				%>
+					<div id="msg_error">
+						<span>El ID ya existe</span>
+					</div>
+				<%}%>
 		<fieldset style="width:fit-content">
 			<legend id="legends"><b>Rellene los siguientes datos: </b></legend>
 					Año del vehículo: <input type="number" name="model_year" required><br>
@@ -60,7 +69,7 @@
 		
 		</fieldset>
 					</form>
-			<p><a href="indexCar.jsp?marca=<%= idBrand%>" ><button name="Back" id="addButton" value="back">Volver </button></a></p>
+			<p><a href="indexCar.jsp?marca=<%=idBrand%>" ><button name="Back" id="addButton" value="back">Volver </button></a></p>
 				
 		
     </div>            

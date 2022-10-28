@@ -19,6 +19,11 @@
 		color:black;
 	}
 	
+	#msg_error{
+		color: red;
+		
+	}
+	
 	#addButton{
         text-decoration: none;
         padding: 8px;
