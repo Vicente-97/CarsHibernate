@@ -18,3 +18,18 @@
 	hr{
 		color:black;
 	}
+	
+	#addButton{
+        text-decoration: none;
+        padding: 8px;
+        font-weight: 600;
+        font-size: 20px;
+        color: #ffffff;
+        background-color: #102477;
+        border-radius: 3px;
+        border: 2px solid #7e87c5;
+    }
+    #addButton:hover{
+        color: #222d7a;
+        background-color: #ffffff;
+    }

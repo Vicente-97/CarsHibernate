@@ -11,16 +11,12 @@
 <%
  	 String isSession = (String) session.getAttribute("login");
 	String userSession = (String) session.getAttribute("usuario");
-	/*
+	
 	if(isSession == null && userSession == null){
 		response.sendRedirect("error.jsp?msg=No tienes permisos, haz login.");
-	} */
+	} 
 	 
-	// Obtengo el id desde el parametro
-	//String idCar = request.getParameter("value");
-	// busco el coche en la base de datos
-	//CRUDCar.getCar(idCar);
-	//Car car = daoCar.getCar(idCar);
+	
 	
 	String idBrand = request.getParameter("marca2");
 	Brand b = CRUDBrand.getBrand(idBrand);
@@ -37,7 +33,8 @@
 
 	<div id="header">
     	<a href="indexCar.jsp?marca=<%=idBrand%>"><img src="images/icono2.png" width="110px" height="100px" id="logo"></a>
-        <span id="welcome"> <h4>Sesion: <%=userSession%></h4></span>
+        <span id="welcome"><h4>Sesion: <%=userSession %></h4><a href="CloseSession.jsp" ><button name="CloseSession" id="CloseSession" value="CloseSession">Log Out</button></a></span>
+       
         <hr>
     </div>
     <div id="contenido">
@@ -63,6 +60,8 @@
 		
 		</fieldset>
 					</form>
+			<p><a href="indexCar.jsp?marca=<%= idBrand%>" ><button name="Back" id="addButton" value="back">Volver </button></a></p>
+				
 		
     </div>            
 		

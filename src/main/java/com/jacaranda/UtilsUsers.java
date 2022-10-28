@@ -42,5 +42,9 @@ public class UtilsUsers {
 		return valid;
 	}
 	
+	public static void closeSession () {	
+		 Session session = Conn.getSession();
+		 session.clear();
+	}
 
 }

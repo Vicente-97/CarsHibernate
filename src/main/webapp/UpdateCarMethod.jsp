@@ -7,10 +7,18 @@
     <%@page import="java.time.LocalDate"%>
 <%@page import="java.sql.Date"%>
 
+	<%
+ String isSession = (String) session.getAttribute("login");
+	String userSession = (String) session.getAttribute("usuario");
+	
+	if(isSession == null && userSession == null){
+		response.sendRedirect("error.jsp?msg=No tienes permisos, haz login.");
+	}  
+%> 
 
 <%
 //Recoge los campos del formulario y hace uso del método updateCar, te redirige a la pagina de inicio.
-		CRUDCar cr = new CRUDCar();
+		
 
 
 		Integer modelYear=Integer.valueOf(request.getParameter("model_year"));
@@ -25,7 +33,7 @@
 		LocalDate entry_date = LocalDate.parse(String.valueOf((request.getParameter("entry_date"))));
 		String id = String.valueOf(request.getParameter("id"));
 		
-		Car car =cr.getCar(id);
+		Car car =CRUDCar.getCar(id);
 		car.setModelAuto(modelAuto);
 		car.setModelYear(modelYear);
 		car.setCarMaker(b);
@@ -34,12 +42,8 @@
 		car.setDateEntry(entry_date);
 		car.setId(id);
 		
-		/* if(car.getCarMaker()==null){
-			Brand br = new Brand();
-			CRUDBrand.getBrand()
-			
-		} */
-		cr.updateCar(car);
+	
+		CRUDCar.updateCar(car);
 	
 		
 		%>

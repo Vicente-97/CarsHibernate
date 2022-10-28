@@ -2,6 +2,14 @@
 <%@page import="com.jacaranda.CRUDCar"%>
 <%@page import="java.time.LocalDate"%>
 <%@page import="java.sql.Date"%>
+<%
+ String isSession = (String) session.getAttribute("login");
+	String userSession = (String) session.getAttribute("usuario");
+	
+	if(isSession == null && userSession == null){
+		response.sendRedirect("error.jsp?msg=No tienes permisos, haz login.");
+	}  
+%> 
 
 
 
