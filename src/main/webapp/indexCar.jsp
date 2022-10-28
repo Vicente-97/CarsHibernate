@@ -11,10 +11,10 @@
 <%
  	String isSession = (String) session.getAttribute("login");
 	String userSession = (String) session.getAttribute("usuario");
-	/* 
+	
 	if(isSession == null && userSession == null){
 		response.sendRedirect("error.jsp?msg=No tienes permisos, haz login.");
-	}  */
+	}  
 %>
 <!DOCTYPE html>
 <html>
@@ -27,7 +27,9 @@
 	<div id="header">
 		 <a href = "indexBrand.jsp"><img src="images/icono2.png" width="110px" height="100px" id="logo"></a>
 		 
-		 <span id="welcome"><h4>Sesion: <%=userSession%></h4></span>
+		 <span id="welcome"><h4>Sesion: <%=userSession %></h4><a href="CloseSession.jsp" ><button name="CloseSession" id="CloseSession" value="CloseSession">Log Out</button></a></span>
+		 
+		 
 		 <hr>
 
 	</div>

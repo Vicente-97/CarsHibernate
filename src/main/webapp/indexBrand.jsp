@@ -6,16 +6,17 @@
 <%@ page import="com.jacaranda.Car"%>
 <%@ page import="com.jacaranda.Brand"%>
 <%@ page import="java.util.List"%>
+<%@ page import="com.jacaranda.UtilsUsers"%>
 <jsp:useBean id="brand" class="com.jacaranda.Brand"></jsp:useBean>
 
 
 <%
  String isSession = (String) session.getAttribute("login");
 	String userSession = (String) session.getAttribute("usuario");
-	/* 
+	
 	if(isSession == null && userSession == null){
 		response.sendRedirect("error.jsp?msg=No tienes permisos, haz login.");
-	}  */
+	}  
 %> 
 <!DOCTYPE html>
 <html>
@@ -28,7 +29,8 @@
 
 	<div id="header">
 		<img src="images/icono2.png" width="110px" height="100px" id="logo"> 
-		<span id="welcome"><h4>Sesion: <%=userSession%></h4></span>
+		<span id="welcome"><h4>Sesion: <%=userSession %></h4><a href="CloseSession.jsp" ><button name="CloseSession" id="CloseSession" value="CloseSession">Log Out</button></a></span>
+		 
 		
 		 <hr>
 
@@ -56,7 +58,6 @@
 				<th>Marca</th>
 				<th>Pais</th>
 				<th>Sucursal</th>
-				<th>Cantidad</th>
 				<th>Delete</th>
 				<th>Update</th>
 				<th>Ver coches</th>
@@ -77,7 +78,7 @@
 					<td><%=brand.getName()%></td>
 					<td><%=brand.getCountry()%></td>
 					<td><%=brand.getAddress()%></td>
-					<td><%=brand.getListCar().size()%></td> 
+					
 						
 					<td><a href="deleteBrand.jsp?marca=<%=brand.getName()%>"><img src="images/delete.png" width="30px"></a></td>
 					<td><a href="updateBrand.jsp?marca=<%=brand.getName()%>"><img src="images/update.png" width="30px"></a></td>

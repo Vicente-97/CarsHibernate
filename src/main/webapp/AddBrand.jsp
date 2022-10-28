@@ -8,13 +8,22 @@
 </head>
 <body>
 <link rel="stylesheet" type="text/css" href="css/generalStyle.css">
+<%
+ String isSession = (String) session.getAttribute("login");
+	String userSession = (String) session.getAttribute("usuario");
+	
+	if(isSession == null && userSession == null){
+		response.sendRedirect("error.jsp?msg=No tienes permisos, haz login.");
+	}  
+%> 
 
 </head>
 <body background="images/fondo.svg">
 
 	<div id="header">
     	<a href="indexBrand.jsp"> <img src="images/icono2.png" width="110px" height="100px" id="logo"></a>
-        <span id="welcome"><h4>Sesion: </h4></span>
+        <span id="welcome"><h4>Sesion: <%=userSession %></h4><a href="CloseSession.jsp" ><button name="CloseSession" id="CloseSession" value="CloseSession">Log Out</button></a></span>
+        <br>
         <hr>
     </div>
     <div id="contenido">
@@ -34,6 +43,9 @@
 		
 		</fieldset>
 					</form>
+					
+					<p><a href="indexBrand.jsp" ><button name="Back" id="addButton" value="Back">Volver </button></a></p>
+					<!-- <a href="indexBrand.jsp"><button name="annadirBrand">Back</button></a> -->
 		
     </div>            
 

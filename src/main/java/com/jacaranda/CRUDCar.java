@@ -19,10 +19,13 @@ public class CRUDCar {
 		Session session = Conn.getSession();
 		
 		try {
+			
 			session.getTransaction().begin();
 			session.saveOrUpdate(car);
 			car.getCarMaker().getListCar().add(car);
 			session.getTransaction().commit();
+			
+			
 			resultado=true;			
 			
 		} catch (Exception e) {
