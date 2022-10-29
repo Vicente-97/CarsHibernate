@@ -15,8 +15,6 @@
 	// Obtengo el id desde el parametro
 	String idCar = request.getParameter("value");
 	// busco el coche en la base de datos
-	
-	
 	Car car =CRUDCar.getCar(idCar);
 %>
 

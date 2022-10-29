@@ -5,6 +5,16 @@ import java.util.ArrayList;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
+/**
+ * Clase encargada del control de los coches, dispone de varios metodos:
+ * -Buscar el coche por id.
+ * -Añadir un coche a la lista de coches de una marca
+ * -Updatear un coche.
+ * -Borrar un coche.
+ * -Obtener todos los coches de una marca.
+ * @author vicente
+ *
+ */
 public class CRUDCar {
 
 	public static Car getCar(String id) {

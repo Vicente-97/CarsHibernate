@@ -9,20 +9,12 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-
+/**
+ * Clase con la que realizaremos la conexión a base de datos.
+ */
 public class Conn {
 	
-//	private static Connection conn = null;
-	
-	//método para realizar la conexión con base de datos
-//	public static Connection getConnection() throws SQLException, ClassNotFoundException {
-//		
-//		if (conn == null) {
-//			Class.forName("com.mysql.cj.jdbc.Driver");
-//			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/concesionario?useSSL=false", "toor", "toor");
-//		}
-//		return conn;
-//	}
+
 	
 	private static StandardServiceRegistry sr = new StandardServiceRegistryBuilder().configure().build();
 	private static SessionFactory sf = new MetadataSources(sr).buildMetadata().buildSessionFactory();

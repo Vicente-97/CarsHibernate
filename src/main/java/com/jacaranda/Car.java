@@ -1,6 +1,7 @@
 package com.jacaranda;
 
 import java.time.LocalDate;
+
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -9,6 +10,13 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+
+/**
+ * Clase coche(Car) compuesta por varios campos, ID es su identificador principal
+ * y Brand es una Clave Foránea o FK de la clase Marca, en la base de datos se denomina "car_make".
+ * Cada coche pertenecerá a una marca en concreto.
+ */
 	@Entity
 	@Table(name="CAR_DATA")
 public class Car {

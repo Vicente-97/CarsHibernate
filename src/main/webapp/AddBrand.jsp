@@ -5,9 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Add Brand</title>
+<link rel="stylesheet" type="text/css" href="css/generalStyle.css">
 </head>
 <body>
-<link rel="stylesheet" type="text/css" href="css/generalStyle.css">
 <%
  String isSession = (String) session.getAttribute("login");
 	String userSession = (String) session.getAttribute("usuario");
@@ -38,6 +38,8 @@
 						<span>La marca ya existe</span>
 					</div>
 				<%}%>
+				
+				
 		<fieldset style="width:fit-content">
 			<legend id="legends"><b>Rellene los siguientes datos: </b></legend>
 					Nombre de la Marca: <input type="text" name="nameBrand" required><br>
@@ -54,7 +56,7 @@
 					</form>
 					
 					<p><a href="indexBrand.jsp" ><button name="Back" id="addButton" value="Back">Volver </button></a></p>
-					<!-- <a href="indexBrand.jsp"><button name="annadirBrand">Back</button></a> -->
+				
 		
     </div>            
 

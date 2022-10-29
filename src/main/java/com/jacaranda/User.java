@@ -3,6 +3,11 @@ package com.jacaranda;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+/**
+ * Clase usuario.
+ * @author vicente
+ *
+ */
 @Entity (name = "USERS")
 public class User {
 	@Id

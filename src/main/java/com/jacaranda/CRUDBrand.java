@@ -10,7 +10,16 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.query.Query;
 
 
-
+/**
+ * Clase encargada del control de la marca, dispone de varios metodos:
+ * -Buscar la marca por nombre de la marca,
+ * -Añadir una marca a la lista de marcas. Este metodo nos servirá para actualizar la marca
+ * ya que si no existe la crea y si existe la updatea.
+ * -Borrar una marca.
+ * -Obtener todas las marcas.
+ * @author vicente
+ *
+ */
 public class CRUDBrand {
 		
 	public static Brand getBrand(String name ) {
@@ -35,19 +44,8 @@ public class CRUDBrand {
 		return resultado;
 	}
 	
-//	public void pruebaInsert(Car c) {
-//		session.getTransaction().begin();
-//		session.save(c);
-//		session.getTransaction().commit();
-//	}
-//	
-//	public void pruebaUpdate(Car c) {
-//		session.getTransaction().begin();
-//		session.update(c);
-//		session.getTransaction().commit();
-//	}
 	
-	public  static boolean  pruebaDelete(Brand brand) {
+	public  static boolean  deleteBrand(Brand brand) {
 		boolean resultado= false;
 		Session session =Conn.getSession();
 		

@@ -31,6 +31,9 @@
 		Brand brand = CRUDBrand.getBrand(carMake);
 		
 		String avaibility=String.valueOf(request.getParameter("avaibility"));
+		
+		
+		
 		Double price=Double.valueOf(request.getParameter("price"));
 		LocalDate entry_date = LocalDate.parse(String.valueOf((request.getParameter("entry_date"))));
 		String id = String.valueOf(request.getParameter("id"));

@@ -21,5 +21,5 @@ Car c= CRUDCar.getCar(idCar);
 String brand = c.getCarMaker().getName();
 
 CRUDCar.carDelete(c);
-//cr.pruebaDelete(b);value=<%=brand.getName()
+
 response.sendRedirect("indexCar.jsp?marca="+brand);%>

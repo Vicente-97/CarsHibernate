@@ -33,7 +33,7 @@
 	}
 	
 	%>
-<%-- 	<jsp:forward page="indexBrand.jsp"></jsp:forward> --%>
+
 	
 
 </body>

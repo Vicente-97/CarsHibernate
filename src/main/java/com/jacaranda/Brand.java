@@ -9,7 +9,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-
+/**
+ * Clase Marca (Brand), compuesta por un campo nombre, país y dirección. El campo nombre será su identificador principal.
+ * Cada marca tendrá una lista de coches que pertenezcan a dicha marca.
+ */
 	@Entity(name="Brand")
 public class Brand {
 	@Id

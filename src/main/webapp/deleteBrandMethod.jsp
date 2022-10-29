@@ -17,9 +17,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%CRUDBrand cr = new CRUDBrand();
-Brand b = cr.getBrand(String.valueOf(request.getParameter("idEliminarBrand")));
-cr.pruebaDelete(b);
+<%
+Brand b = CRUDBrand.getBrand(String.valueOf(request.getParameter("idEliminarBrand")));
+CRUDBrand.deleteBrand(b);
 response.sendRedirect("indexBrand.jsp");%>
 
 </body>

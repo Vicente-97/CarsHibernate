@@ -46,20 +46,22 @@
 				if(messageLog!=null){
 				%>
 					<div id="msg_error">
-						<span>El ID ya existe</span>
+						<span>El ID ya existe, no se puede añadir un coche con el mismo ID.</span>
 					</div>
 				<%}%>
+				
+				
 		<fieldset style="width:fit-content">
 			<legend id="legends"><b>Rellene los siguientes datos: </b></legend>
-					Año del vehículo: <input type="number" name="model_year" required><br>
+					Año del vehículo: <input type="number" name="model_year" min=1800 required><br>
 					<br>
 					Modelo: <input type="text" name="model_auto" required><br>
 					<br>
-					Disponibilidad: Si<input type="radio" name="avaibility" value="false">
-					No <input type="radio" name="avaibility" value="true">
+					Disponibilidad: Si<input type="radio" name="avaibility" value="1" required>
+					No <input type="radio" name="avaibility" value="0" required>
 					<br>
 					<br>
-					Precio: <input type="number" step="any" name="price" required><br>
+					Precio: <input type="number" step="any" id="" name="price" min=1 max=500000 required><br>
 					<br>
 					Fecha de entrada: <input type="date" name="entry_date" required><br>
 					<br>

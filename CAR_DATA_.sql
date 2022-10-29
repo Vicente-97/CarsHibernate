@@ -32,7 +32,7 @@ insert into USERS (name, pass) values ('pilar', 'pilar');
 insert into USERS (name, pass) values ('vicente', 'vicente');
 insert into USERS (name, pass) values ('javi', 'javi');
 insert into USERS (name, pass) values ('sergio', 'sergio');
-insert into USERS (name, pass) values ('antonio', 'antonio');
+insert into USERS (name, pass) values ('inma', 'inma');
 
 
 insert into Brand (name, country, address) values ('Toyota', 'Bulgaria', '4199 Veith Way');
