@@ -1,3 +1,11 @@
+
+
+--CREATE DATABASE concesionario;
+--CREATE USER 'toor'@'%' IDENTIFIED BY 'toor';
+--GRANT ALL PRIVILEGES ON concesionario TO 'toor'@'%';
+
+
+
 create table Brand (
 	name VARCHAR(50),
 	country VARCHAR(50),
